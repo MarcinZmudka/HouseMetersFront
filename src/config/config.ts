@@ -1,1 +1,1 @@
-export const url = "https://housemeterbackend.herokuapp.com/get";
+export const url = "https://housemeterbackend.herokuapp.com";
