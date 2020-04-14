@@ -7,7 +7,7 @@ import { IControlInputs, IUpdateValue, FlatValues } from "./interfaces";
 
 const ControlInputs: React.FC<IControlInputs> = ({ attributesToTake }) => {
 	const actualState = useContext(ActualState);
-	const previousState = useContext(PreviousState);
+	const [previousState] = useContext(PreviousState);
 	const matchArguments = (flat: Flat) => {
 		const x = Object.entries(flat) as Array<[keyof typeof flat, any]>;
 		const filter = x.filter((item) => {

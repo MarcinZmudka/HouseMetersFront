@@ -10,10 +10,12 @@ function App() {
 	const [send, setSend] = useState({ show: false, message: "" });
 	return (
 		<div className="App">
-			<PreviousStateProvider>
-				<ActualStateProvider>
+			<ActualStateProvider>
+				<PreviousStateProvider>
 					<Router>
-						<div className="title">System spisywania liczników</div>
+						<div className="title">
+							<span>System spisywania liczników</span>
+						</div>
 						{send.show ? <Message message={send.message} /> : ""}
 						<Route exact path="/">
 							<Link to="/water">Woda</Link>
@@ -38,8 +40,8 @@ function App() {
 							</Route>
 						</Switch>
 					</Router>
-				</ActualStateProvider>
-			</PreviousStateProvider>
+				</PreviousStateProvider>
+			</ActualStateProvider>
 		</div>
 	);
 }

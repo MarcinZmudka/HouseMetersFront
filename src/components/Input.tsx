@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import ActualState from "../context/ActualState";
 import { getPlaceholder, getID } from "../functions/getPlaceHolder";
 import { Flat } from "../context/interfaces";
+import PreviousState from "../context/PreviousState";
 
 interface inputProps {
 	placeholder: keyof Flat;

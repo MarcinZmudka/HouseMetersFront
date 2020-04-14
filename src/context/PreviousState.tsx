@@ -1,14 +1,21 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, {
+	createContext,
+	useState,
+	useEffect,
+	Dispatch,
+	SetStateAction,
+} from "react";
 import { Flat, creatInitialObjects, IProps } from "./interfaces";
 import getPreviousState from "../functions/getPreviousState";
 
-// const X: [Array<Flat>, Dispatch<SetStateAction<Flat[]>>] = [
-// 	creatInitialObjects(),
-// 	(e) => {},
-// ];
-const PreviousState = createContext<Flat[]>([]);
+const X: [Array<Flat>, Dispatch<SetStateAction<Flat[]>>] = [
+	creatInitialObjects(),
+	(e) => {},
+];
+const PreviousState = createContext(X);
 export const PreviousStateProvider: React.FC<IProps> = (props) => {
 	const [state, setState] = useState(creatInitialObjects());
+
 	useEffect(() => {
 		const get = async () => {
 			const x = await getPreviousState();
@@ -19,7 +26,7 @@ export const PreviousStateProvider: React.FC<IProps> = (props) => {
 		get();
 	}, []);
 	return (
-		<PreviousState.Provider value={state}>
+		<PreviousState.Provider value={[state, setState]}>
 			{props.children}
 		</PreviousState.Provider>
 	);
