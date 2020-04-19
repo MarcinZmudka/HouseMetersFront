@@ -11,6 +11,7 @@ function App() {
 	const [send, setSend] = useState({ show: false, message: "" });
 	return (
 		<div className="App">
+			{console.log(process.env.URL_BACKEND, "!")}
 			<ActualStateProvider>
 				<PreviousStateProvider>
 					<Router>
