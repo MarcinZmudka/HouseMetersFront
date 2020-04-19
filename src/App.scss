@@ -1,6 +1,8 @@
 $animation-time: 2s;
 $button-border: #264d00;
 $button-background: rgba(44, 158, 24, 0.5);
+$download-border: #244b91;
+$download-background: #356bcd85;
 $normal-background: rgba(109, 109, 109, 0.15);
 $message-backround: rgba(238, 255, 0, 0.445);
 .App {
@@ -59,6 +61,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	margin-bottom: 30px;
 }
 input {
 	margin: 2px;
@@ -169,6 +172,17 @@ button {
 	&::after {
 		border-top: 2px solid $button-border;
 		border-left: 2px solid $button-border;
+	}
+}
+.download {
+	background-color: $download-background;
+	&::before {
+		border-bottom: 2px solid $download-border;
+		border-right: 2px solid $download-border;
+	}
+	&::after {
+		border-top: 2px solid $download-border;
+		border-left: 2px solid $download-border;
 	}
 }
 .text {

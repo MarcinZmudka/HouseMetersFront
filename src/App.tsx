@@ -6,6 +6,7 @@ import ControlInputs from "./components/ControlInputs";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Button from "./components/Button";
 import Message from "./components/Message";
+import GetCSV from "./components/GetCSV";
 function App() {
 	const [send, setSend] = useState({ show: false, message: "" });
 	return (
@@ -22,6 +23,7 @@ function App() {
 							<Link to="/electricity">Prąd</Link>
 							<Link to="/heat">Ogrzewanie</Link>
 							<Button onChange={setSend} />
+							<GetCSV />
 						</Route>
 						<Route strict path={["/water", "/electricity", "/heat"]}>
 							<Link to="/">Powrót</Link>
