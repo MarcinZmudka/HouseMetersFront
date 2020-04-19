@@ -14,10 +14,13 @@ const X: [Array<Flat>, Dispatch<SetStateAction<Flat[]>>] = [
 ];
 const PreviousState = createContext(X);
 export const PreviousStateProvider: React.FC<IProps> = (props) => {
-	const [state, setState] = useState(creatInitialObjects());
+	const [state, setState] = useState(
+		props.value ? props.value : creatInitialObjects()
+	);
 
 	useEffect(() => {
 		const get = async () => {
+			// dodać przypadek braku połączenia z serwerem
 			const x = await getPreviousState();
 			if (x) {
 				setState(x);

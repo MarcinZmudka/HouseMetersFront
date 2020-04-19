@@ -9,8 +9,8 @@ const ControlInputs: React.FC<IControlInputs> = ({ attributesToTake }) => {
 	const actualState = useContext(ActualState);
 	const [previousState] = useContext(PreviousState);
 	const matchArguments = (flat: Flat) => {
-		const x = Object.entries(flat) as Array<[keyof typeof flat, any]>;
-		const filter = x.filter((item) => {
+		const keys = Object.entries(flat) as Array<[keyof typeof flat, any]>;
+		const filter = keys.filter((item) => {
 			if (attributesToTake.includes(item[0])) {
 				return true;
 			}

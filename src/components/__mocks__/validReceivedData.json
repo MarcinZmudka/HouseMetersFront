@@ -1,0 +1,74 @@
+[
+	{
+		"id": 0,
+		"coldWater": 0,
+		"hotWater": 0,
+		"electricityOne": 0,
+		"electricityTwo": 0,
+		"heat": 0
+	},
+	{
+		"id": 1,
+		"coldWater": 1234,
+		"hotWater": 223,
+		"electricityOne": 0,
+		"electricityTwo": 0,
+		"heat": 0
+	},
+	{
+		"id": 2,
+		"coldWater": 0,
+		"hotWater": 0,
+		"electricityOne": 0,
+		"electricityTwo": 0,
+		"heat": 0
+	},
+	{
+		"id": 3,
+		"coldWater": 0,
+		"hotWater": 0,
+		"electricityOne": 0,
+		"electricityTwo": 0,
+		"heat": 0
+	},
+	{
+		"id": 4,
+		"coldWater": 0,
+		"hotWater": 0,
+		"electricityOne": 0,
+		"electricityTwo": 0,
+		"heat": 0
+	},
+	{
+		"id": 5,
+		"coldWater": 0,
+		"hotWater": 0,
+		"electricityOne": 0,
+		"electricityTwo": 0,
+		"heat": 0
+	},
+	{
+		"id": 6,
+		"coldWater": 0,
+		"hotWater": 0,
+		"electricityOne": 0,
+		"electricityTwo": 0,
+		"heat": 0
+	},
+	{
+		"id": 7,
+		"coldWater": 0,
+		"hotWater": 0,
+		"electricityOne": 0,
+		"electricityTwo": 0,
+		"heat": 0
+	},
+	{
+		"id": 8,
+		"coldWater": 0,
+		"hotWater": 0,
+		"electricityOne": 0,
+		"electricityTwo": 0,
+		"heat": 0
+	}
+]

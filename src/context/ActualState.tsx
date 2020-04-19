@@ -9,7 +9,8 @@ import { Flat, IProps, creatInitialObjects } from "./interfaces";
 const ActualState = createContext<Flat[]>([]);
 
 export const ActualStateProvider: React.FC<IProps> = (props) => {
-	const [value] = useState(creatInitialObjects());
+	/** Props.value is only for testing */
+	const [value] = useState(props.value ? props.value : creatInitialObjects());
 	return (
 		<ActualState.Provider value={value}>{props.children}</ActualState.Provider>
 	);

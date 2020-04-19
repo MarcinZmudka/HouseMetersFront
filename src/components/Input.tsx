@@ -3,6 +3,7 @@ import ActualState from "../context/ActualState";
 import { getPlaceholder, getID } from "../functions/getPlaceHolder";
 import { Flat } from "../context/interfaces";
 import PreviousState from "../context/PreviousState";
+import getNameOfFlat from "../functions/getName";
 
 interface inputProps {
 	placeholder: keyof Flat;
@@ -47,7 +48,7 @@ const Input: React.FC<inputProps> = ({
 			) : (
 				""
 			)}
-			<h3>{`${getPlaceholder(placeholder)} - ${getID(id)}`}</h3>
+			<h3>{`${getPlaceholder(placeholder)} - ${getNameOfFlat(getID(id))}`}</h3>
 			<div className="input">
 				<div className="box">
 					<input
