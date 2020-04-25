@@ -11,6 +11,7 @@ export interface Flat {
 export interface IProps {
 	children: ReactNode;
 	value?: Flat[];
+	setMessage?: Function;
 }
 
 class ObjectFlat implements Flat {

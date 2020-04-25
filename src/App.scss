@@ -108,8 +108,8 @@ input {
 	}
 	&:focus-within::before,
 	&:focus-within::after {
-		width: 99%;
-		height: 97%;
+		width: calc(100% - 2px);
+		height: calc(100% - 2px);
 	}
 }
 
@@ -155,8 +155,8 @@ a {
 	}
 	&:hover::before,
 	&:hover::after {
-		width: 100.7%;
-		height: 100.7%;
+		width: calc(100% + 2px);
+		height: calc(100% + 2px);
 	}
 	@media (max-width: 900px) {
 		width: 70vw;

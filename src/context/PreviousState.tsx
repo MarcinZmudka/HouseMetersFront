@@ -24,10 +24,17 @@ export const PreviousStateProvider: React.FC<IProps> = (props) => {
 			const x = await getPreviousState();
 			if (x) {
 				setState(x);
+			} else {
+				if (props.setMessage) {
+					props.setMessage({
+						show: true,
+						message: "Brak połączenia z serwerem",
+					});
+				}
 			}
 		};
 		get();
-	}, []);
+	}, [props]);
 	return (
 		<PreviousState.Provider value={[state, setState]}>
 			{props.children}

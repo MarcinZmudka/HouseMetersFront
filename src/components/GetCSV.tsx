@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import { url } from "../config/config";
 const GetCSV: React.FC = () => {
 	const getData = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {

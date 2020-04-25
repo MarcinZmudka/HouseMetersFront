@@ -12,7 +12,7 @@ function App() {
 	return (
 		<div className="App">
 			<ActualStateProvider>
-				<PreviousStateProvider>
+				<PreviousStateProvider setMessage={setSend}>
 					<Router>
 						<div className="title">
 							<span>System spisywania liczników</span>
