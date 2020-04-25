@@ -29,14 +29,28 @@ const Input: React.FC<inputProps> = ({
 	const updateValue = (event: React.FormEvent<HTMLInputElement>) => {
 		const value = event.currentTarget.value.replace(",", ".");
 		const ids = getID(id);
-		if (isNaN(parseFloat(value))) {
+
+		const regex = new RegExp(/([0-9]+\.+[0-9]+)|([0-9]+\.)|([0-9]+)/g);
+		const newValue = value.match(regex);
+
+		let correctValue = "";
+		if (newValue) {
+			/* 
+				W przypadku gdyby pomiędzy cyfry dostała się litera
+			*/
+			correctValue = newValue.reduce((prev, current) => {
+				return prev + current;
+			}, "");
+		} else {
 			setValue("0");
 			setGoodValue(false);
-		} else if (parseFloat(value) < previousValue) {
-			setValue(value.toString());
+			return;
+		}
+		if (parseFloat(correctValue) < previousValue) {
+			setValue(correctValue);
 			setGoodValue(false);
 		} else {
-			setValue(value.toString());
+			setValue(correctValue);
 			onChange({ ids, value, placeholder });
 			setGoodValue(true);
 		}
