@@ -1,12 +1,12 @@
 import React, { useState, useContext } from "react";
 import ActualState from "../context/ActualState";
 import { getPlaceholder, getID } from "../functions/getPlaceHolder";
-import { Flat } from "../context/interfaces";
+import { House, Flat } from "../context/interfaces";
 import PreviousState from "../context/PreviousState";
 import getNameOfFlat from "../functions/getName";
 
 interface inputProps {
-	placeholder: keyof Flat;
+	placeholder: keyof House | keyof Flat;
 	previousValue: number;
 	onChange: Function;
 	id: string;
@@ -22,8 +22,10 @@ const Input: React.FC<inputProps> = ({
 	const [goodValue, setGoodValue] = useState(true);
 	const getValue = () => {
 		const flat = actualState[getID(id)];
-		const property: keyof typeof flat = placeholder;
-		return flat[property].toString();
+		const property = placeholder;
+		if ((flat as House).electricityTwo)
+			return (flat as House)[property].toString();
+		return flat[property as keyof Flat].toString();
 	};
 	const [value, setValue] = useState(getValue());
 	const updateValue = (event: React.FormEvent<HTMLInputElement>) => {
@@ -56,15 +58,10 @@ const Input: React.FC<inputProps> = ({
 		}
 	};
 	return (
-		<>
-			{!goodValue ? (
-				<h3>Wartość mniejsza od stanu z poprzedniego miesiąca</h3>
-			) : (
-				""
-			)}
+		<div className="input-box">
 			<h3>{`${getPlaceholder(placeholder)} - ${getNameOfFlat(getID(id))}`}</h3>
-			<div className="input">
-				<div className="box">
+			<div className={goodValue ? "input" : "bad-input"}>
+				<div className={goodValue ? "box" : "bad-box"}>
 					<input
 						type="text"
 						placeholder={getPlaceholder(placeholder)}
@@ -73,7 +70,7 @@ const Input: React.FC<inputProps> = ({
 					/>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 

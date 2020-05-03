@@ -5,13 +5,13 @@ import React, {
 	Dispatch,
 	SetStateAction,
 } from "react";
-import { Flat, creatInitialObjects, IProps } from "./interfaces";
+import { Flat, creatInitialObjects, IProps, House } from "./interfaces";
 import getPreviousState from "../functions/getPreviousState";
 
-const X: [Array<Flat>, Dispatch<SetStateAction<Flat[]>>] = [
-	creatInitialObjects(),
-	(e) => {},
-];
+const X: [
+	Array<Flat | House>,
+	Dispatch<SetStateAction<Array<Flat | House>>>
+] = [creatInitialObjects(), (e) => {}];
 const PreviousState = createContext(X);
 export const PreviousStateProvider: React.FC<IProps> = (props) => {
 	const [state, setState] = useState(
@@ -20,7 +20,6 @@ export const PreviousStateProvider: React.FC<IProps> = (props) => {
 
 	useEffect(() => {
 		const get = async () => {
-			// dodać przypadek braku połączenia z serwerem
 			const x = await getPreviousState();
 			if (x) {
 				setState(x);

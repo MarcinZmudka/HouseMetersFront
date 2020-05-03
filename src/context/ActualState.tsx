@@ -1,12 +1,12 @@
 import React, { createContext, useState } from "react";
-import { Flat, IProps, creatInitialObjects } from "./interfaces";
+import { Flat, IProps, creatInitialObjects, House } from "./interfaces";
 
 // const X: [Array<Flat>, Dispatch<SetStateAction<Flat[]>>] = [
 // 	creatInitialObjects(),
 // 	(e) => {},
 // ];
 // const test: Flat[] = [];
-const ActualState = createContext<Flat[]>([]);
+const ActualState = createContext<Array<House | Flat>>([]);
 
 export const ActualStateProvider: React.FC<IProps> = (props) => {
 	/** Props.value is only for testing */

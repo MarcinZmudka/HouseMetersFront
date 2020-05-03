@@ -10,10 +10,15 @@ export function getPlaceholder(key: string) {
 			return "Licznik eletryczny 2";
 		case "heat":
 			return "Ciepłomierz lub gaz";
+		case "togetherOne":
+			return "Licznik elektryczny części wspólnych 1";
+		case "togetherTwo":
+			return "Licznik elektryczny części wspólnych 2";
 		default:
 			return "ERROR";
 	}
 }
+
 export function getKey(key: string) {
 	switch (key) {
 		case "Zimna Woda":
@@ -26,6 +31,10 @@ export function getKey(key: string) {
 			return "electricityTwo";
 		case "Ciepłomierz lub gaz":
 			return "heat";
+		case "Licznik elektryczny części wspólnych 2togetherTwo":
+			return "togetherTwo";
+		case "Licznik elektryczny części wspólnych 1":
+			return "togetherOne";
 		default:
 			return "ERROR";
 	}

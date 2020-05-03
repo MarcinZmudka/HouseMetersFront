@@ -56,7 +56,8 @@ body {
 		}
 	}
 }
-.input {
+.input,
+.bad-input {
 	position: relative;
 	display: flex;
 	align-items: center;
@@ -80,7 +81,8 @@ input {
 		outline: none;
 	}
 }
-.box {
+.box,
+.bad-box {
 	position: relative;
 	&::after {
 		content: "";
@@ -112,7 +114,16 @@ input {
 		height: calc(100% - 2px);
 	}
 }
-
+.bad-box {
+	&::after {
+		border-top: 2px solid rgb(207, 0, 0);
+		border-left: 2px solid rgb(207, 0, 0);
+	}
+	&::before {
+		border-bottom: 2px solid rgb(207, 0, 0);
+		border-right: 2px solid rgb(207, 0, 0);
+	}
+}
 a {
 	display: flex;
 	align-items: center;

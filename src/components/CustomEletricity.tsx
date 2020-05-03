@@ -2,14 +2,14 @@ import React, { useContext } from "react";
 import ActualState from "../context/ActualState";
 import PreviousState from "../context/PreviousState";
 import Input from "./Input";
-import { Flat } from "../context/interfaces";
+import { House, Flat } from "../context/interfaces";
 import { IControlInputs, IUpdateValue, FlatValues } from "./interfaces";
 
-const ControlInputs: React.FC<IControlInputs> = ({ attributesToTake }) => {
+const CustomElectricity: React.FC<IControlInputs> = ({ attributesToTake }) => {
 	const actualState = useContext(ActualState);
 	const [previousState] = useContext(PreviousState);
-	const matchArguments = (flat: Flat) => {
-		const keys = Object.entries(flat) as Array<[keyof Flat, any]>;
+	const matchArguments = (house: House | Flat) => {
+		const keys = Object.entries(house) as Array<[keyof House, any]>;
 		const filter = keys.filter((item) => {
 			if (attributesToTake.includes(item[0])) {
 				return true;
@@ -43,4 +43,5 @@ const ControlInputs: React.FC<IControlInputs> = ({ attributesToTake }) => {
 		</>
 	);
 };
-export default ControlInputs;
+
+export default CustomElectricity;

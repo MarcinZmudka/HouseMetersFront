@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Flat } from "../context/interfaces";
+import { Flat, House } from "../context/interfaces";
 import { url } from "../config/config";
 
 const getPreviousState = async () => {
@@ -9,7 +9,7 @@ const getPreviousState = async () => {
 		.catch((err) => console.error(err));
 	if (response) {
 		response.flats.map((item: any) => delete item._id);
-		const flats: Array<Flat> = [...response.flats];
+		const flats: Array<Flat | House> = [...response.flats];
 		return await flats;
 	}
 	return undefined;

@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Button from "./components/Button";
 import Message from "./components/Message";
 import GetCSV from "./components/GetCSV";
+import CustomElectricity from "./components/CustomEletricity";
 function App() {
 	const [send, setSend] = useState({ show: false, message: "" });
 	return (
@@ -33,9 +34,15 @@ function App() {
 								<ControlInputs attributesToTake={["hotWater", "coldWater"]} />
 							</Route>
 							<Route path="/electricity">
-								<ControlInputs
-									attributesToTake={["electricityOne", "electricityTwo"]}
+								<CustomElectricity
+									attributesToTake={[
+										"electricityOne",
+										"electricityTwo",
+										"togetherOne",
+										"togetherTwo",
+									]}
 								/>
+								{/* <ControlInputs attributesToTake={["electricityOne"]} /> */}
 							</Route>
 							<Route path="/heat">
 								<ControlInputs attributesToTake={["heat"]} />
