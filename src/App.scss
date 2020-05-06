@@ -9,7 +9,7 @@ $message-backround: rgba(238, 255, 0, 0.445);
 	text-align: center;
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: repeat(100, 15vh);
+	grid-template-rows: auto;
 	justify-items: center;
 	column-gap: 100px;
 	height: 100vh;
@@ -122,6 +122,9 @@ input {
 	&::before {
 		border-bottom: 2px solid rgb(207, 0, 0);
 		border-right: 2px solid rgb(207, 0, 0);
+	}
+	& input {
+		background-color: #ff222299;
 	}
 }
 a {

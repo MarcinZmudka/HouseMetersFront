@@ -4,16 +4,18 @@ export function getPlaceholder(key: string) {
 			return "Zimna Woda";
 		case "hotWater":
 			return "Ciepła Woda";
-		case "electricityOne":
+		case "electricity":
 			return "Licznik eletryczny 1";
-		case "electricityTwo":
-			return "Licznik eletryczny 2";
 		case "heat":
 			return "Ciepłomierz lub gaz";
-		case "togetherOne":
-			return "Licznik elektryczny części wspólnych 1";
-		case "togetherTwo":
-			return "Licznik elektryczny części wspólnych 2";
+		case "togetherOneOne":
+			return "Licznik elektryczny części wspólnych 456-1";
+		case "togetherOneTwo":
+			return "Licznik elektryczny części wspólnych 456-2";
+		case "togetherTwoOne":
+			return "Licznik elektryczny części wspólnych 222-1";
+		case "togetherTwoTwo":
+			return "Licznik elektryczny części wspólnych 222-2";
 		default:
 			return "ERROR";
 	}
@@ -26,15 +28,17 @@ export function getKey(key: string) {
 		case "Ciepła Woda":
 			return "hotWater";
 		case "Licznik eletryczny 1":
-			return "electricityOne";
-		case "Licznik eletryczny 2":
-			return "electricityTwo";
+			return "electricity";
 		case "Ciepłomierz lub gaz":
 			return "heat";
-		case "Licznik elektryczny części wspólnych 2togetherTwo":
-			return "togetherTwo";
-		case "Licznik elektryczny części wspólnych 1":
-			return "togetherOne";
+		case "Licznik elektryczny części wspólnych 222-1":
+			return "togetherTwoOne";
+		case "Licznik elektryczny części wspólnych 222-2":
+			return "togetherTwoTwo";
+		case "Licznik elektryczny części wspólnych 456-1":
+			return "togetherOneOne";
+		case "Licznik elektryczny części wspólnych 456-2":
+			return "togetherOneTwo";
 		default:
 			return "ERROR";
 	}

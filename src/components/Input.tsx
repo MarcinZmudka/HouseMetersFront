@@ -23,7 +23,7 @@ const Input: React.FC<inputProps> = ({
 	const getValue = () => {
 		const flat = actualState[getID(id)];
 		const property = placeholder;
-		if ((flat as House).electricityTwo)
+		if ((flat as House).togetherOneOne)
 			return (flat as House)[property].toString();
 		return flat[property as keyof Flat].toString();
 	};
@@ -60,6 +60,7 @@ const Input: React.FC<inputProps> = ({
 	return (
 		<div className="input-box">
 			<h3>{`${getPlaceholder(placeholder)} - ${getNameOfFlat(getID(id))}`}</h3>
+			{!goodValue ? <h3>Podana wartość mniejsza od poprzedniej</h3> : ""}
 			<div className={goodValue ? "input" : "bad-input"}>
 				<div className={goodValue ? "box" : "bad-box"}>
 					<input

@@ -4,13 +4,14 @@ export interface Flat {
 	id: number;
 	coldWater: number;
 	hotWater: number;
-	electricityOne: number;
+	electricity: number;
 	heat: number;
 }
 export interface House extends Flat {
-	electricityTwo: number;
-	togetherOne: number;
-	togetherTwo: number;
+	togetherOneOne: number;
+	togetherOneTwo: number;
+	togetherTwoOne: number;
+	togetherTwoTwo: number;
 }
 export interface IProps {
 	children: ReactNode;
@@ -22,19 +23,19 @@ class ObjectFlat implements Flat {
 	id: number;
 	coldWater: number;
 	hotWater: number;
-	electricityOne: number;
+	electricity: number;
 	heat: number;
 	constructor(
 		id: number,
 		coldWater: number,
 		hotWater: number,
-		electricityOne: number,
+		electricity: number,
 		heat: number
 	) {
 		this.id = id;
 		this.coldWater = coldWater;
 		this.hotWater = hotWater;
-		this.electricityOne = electricityOne;
+		this.electricity = electricity;
 		this.heat = heat;
 	}
 }
@@ -42,34 +43,37 @@ class ObjectHouse implements House {
 	id: number;
 	coldWater: number;
 	hotWater: number;
-	electricityOne: number;
-	electricityTwo: number;
+	electricity: number;
 	heat: number;
-	togetherOne: number;
-	togetherTwo: number;
+	togetherOneOne: number;
+	togetherOneTwo: number;
+	togetherTwoOne: number;
+	togetherTwoTwo: number;
 	constructor(
 		id: number,
 		coldWater: number,
 		hotWater: number,
-		electricityOne: number,
-		electricityTwo: number,
+		electricity: number,
 		heat: number,
-		togetherOne: number,
-		togetherTwo: number
+		togetherOneOne: number,
+		togetherOneTwo: number,
+		togetherTwoOne: number,
+		togetherTwoTwo: number
 	) {
 		this.id = id;
 		this.coldWater = coldWater;
 		this.hotWater = hotWater;
-		this.electricityOne = electricityOne;
-		this.electricityTwo = electricityTwo;
+		this.electricity = electricity;
 		this.heat = heat;
-		this.togetherOne = togetherOne;
-		this.togetherTwo = togetherTwo;
+		this.togetherOneOne = togetherOneOne;
+		this.togetherOneTwo = togetherOneTwo;
+		this.togetherTwoOne = togetherTwoOne;
+		this.togetherTwoTwo = togetherTwoTwo;
 	}
 }
 export const creatInitialObjects = () => {
-	const array: Array<Flat> = [];
-	array.push(new ObjectHouse(0, 0, 0, 0, 0, 0, 0, 0));
+	const array: Array<Flat | House> = [];
+	array.push(new ObjectHouse(0, 0, 0, 0, 0, 0, 0, 0, 0));
 	for (let i = 1; i < 9; i++) {
 		array.push(new ObjectFlat(i, 0, 0, 0, 0));
 	}

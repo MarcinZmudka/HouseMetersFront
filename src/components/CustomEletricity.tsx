@@ -23,7 +23,7 @@ const CustomElectricity: React.FC<IControlInputs> = ({ attributesToTake }) => {
 			return flat.id === ids ? true : false;
 		});
 		const flat = objectFlat[0];
-		const property: keyof typeof FlatValues = placeholder;
+		const property = placeholder;
 		flat[property] = value;
 	};
 	return (
