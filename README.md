@@ -1,6 +1,6 @@
 ## System do aktualizacji stanu liczników w budynku wielomieszkaniowym
 
-Tutaj znajduje się Frontent aplikacji, aby zobaczyć backend kliknij [tutaj](https://github.com/MarcinZmudka/HouseMetersBackend).
+Tutaj znajduje się Frontend aplikacji, aby zobaczyć backend kliknij [tutaj](https://github.com/MarcinZmudka/HouseMetersBackend).
 
 Aplikacja umożliwia spisanie stanu liczników:
 
